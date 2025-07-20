@@ -1,6 +1,288 @@
-git clone https://github.com/chenlongjun007/gork.git
-cd gork
-# 替换 index.html 文件
-git add index.html
-git commit -m "Optimize website to match dh.kejilion.pro"
-git push origin main
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技Lion导航 - 专业的云服务导航网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #252f3f;
+            color: #e9ecef;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+        .sidebar h2 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #4dabf7;
+            font-weight: 700;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 8px 0;
+        }
+        .sidebar ul li a {
+            color: #e9ecef;
+            text-decoration: none;
+            font-size: 1em;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .sidebar ul li a:hover {
+            background-color: #374151;
+        }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 1.4em;
+            background: #4dabf7;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+            margin-left: 200px;
+            background-color: #f8f9fa;
+        }
+        .main-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #252f3f;
+            font-weight: 700;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 10px 10px 35px;
+            font-size: 1em;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .search-bar::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+        .section {
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            font-size: 1.4em;
+            color: #4dabf7;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .section ul li a {
+            display: block;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95em;
+            transition: background 0.3s, transform 0.2s;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .section ul li a:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                z-index: 999;
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <h2>科技Lion导航</h2>
+            <ul>
+                <li><a href="#cloud-servers">云服务器</a></li>
+                <li><a href="#webmaster-tools">站长工具</a></li>
+                <li><a href="#email-links">邮箱直链</a></li>
+                <li><a href="#cloud-storage">网盘云盘</a></li>
+                <li><a href="#software-downloads">软件下载</a></li>
+                <li><a href="#social-entertainment">社交娱乐</a></li>
+                <li><a href="#vps-offers">VPS优惠</a></li>
+                <li><a href="#domain-offers">域名优惠</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>欢迎体验科技Lion导航站</h1>
+            <p>打造专业的云服务导航网站，方便您的云服务体验！</p>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="搜索导航链接...">
+            </div>
+            <div class="section" id="cloud-servers">
+                <h2>云服务器</h2>
+                <ul>
+                    <li><a href="https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355">V.PS 东京软银 6.9刀/月</a></li>
+                    <li><a href="https://www.lcayun.com/cart?fid=10&gid=82/aff/ZEXUQBIM">莱卡云 VPS</a></li>
+                    <li><a href="https://bwh81.net/aff.php?aff=69004&pid=147">The Plan 限时活动</a></li>
+                    <li><a href="https://my.racknerd.com/aff.php?aff=4966&pid=100">RackNerd VPS</a></li>
+                </ul>
+            </div>
+            <div class="section" id="webmaster-tools">
+                <h2>站长工具</h2>
+                <ul>
+                    <li><a href="https://tool.lu/">在线工具</a></li>
+                    <li><a href="https://www.chinaz.com/">站长之家</a></li>
+                    <li><a href="https://www.aizhan.com/">爱站网</a></li>
+                </ul>
+            </div>
+            <div class="section" id="email-links">
+                <h2>邮箱直链</h2>
+                <ul>
+                    <li><a href="https://mail.google.com/">Gmail</a></li>
+                    <li><a href="https://mail.163.com/">网易邮箱</a></li>
+                    <li><a href="https://mail.qq.com/">QQ邮箱</a></li>
+                </ul>
+            </div>
+            <div class="section" id="cloud-storage">
+                <h2>网盘云盘</h2>
+                <ul>
+                    <li><a href="https://www.aliyundrive.com/">阿里云盘</a></li>
+                    <li><a href="https://pan.baidu.com/">百度网盘</a></li>
+                    <li><a href="https://www.dropbox.com/">Dropbox</a></li>
+                </ul>
+            </div>
+            <div class="section" id="software-downloads">
+                <h2>软件下载</h2>
+                <ul>
+                    <li><a href="https://app.kejilion.pro/">科技Lion软件中心</a></li>
+                    <li><a href="https://www.softonic.com/">Softonic</a></li>
+                </ul>
+            </div>
+            <div class="section" id="social-entertainment">
+                <h2>社交娱乐</h2>
+                <ul>
+                    <li><a href="https://b23.tv/2mqnQyh">B站</a></li>
+                    <li><a href="https://www.youtube.com/@kejilion">YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/">TikTok</a></li>
+                </ul>
+            </div>
+            <div class="section" id="vps-offers">
+                <h2>VPS优惠</h2>
+                <ul>
+                    <li><a href="https://kejilion.pro/topvps/">更多VPS优惠</a></li>
+                    <li><a href="https://www.vultr.com/?ref=123456">Vultr 优惠</a></li>
+                </ul>
+            </div>
+            <div class="section" id="domain-offers">
+                <h2>域名优惠</h2>
+                <ul>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME COM域名 8.8刀/首年</a></li>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME CC域名 6.68刀/首年</a></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script>
+        // 搜索功能：过滤链接
+        function searchLinks() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const title = section.querySelector('h2').textContent.toLowerCase();
+                const links = section.querySelectorAll('ul li a');
+                let hasMatch = title.includes(input);
+                links.forEach(link => {
+                    const linkText = link.textContent.toLowerCase();
+                    if (linkText.includes(input)) {
+                        hasMatch = true;
+                        link.parentElement.style.display = 'block';
+                    } else {
+                        link.parentElement.style.display = 'none';
+                    }
+                });
+                section.style.display = hasMatch ? 'block' : 'none';
+            });
+        }
+
+        // 移动端汉堡菜单：显示/隐藏侧边栏
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // 绑定搜索事件
+        document.getElementById('searchInput').addEventListener('input', searchLinks);
+    </script>
+</body>
+</html>
