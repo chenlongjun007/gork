@@ -1,11 +1,11 @@
-
-
-
-    
-    
-    科技Lion导航 - 专业的云服务导航网站
-    
-    
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技Lion导航 - 专业的云服务导航网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
         body {
             margin: 0;
             font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -108,9 +108,12 @@
             border-radius: 25px;
 就不用管了，接下来我帮你把代码贴出来，然后解释优化点和部署步骤。
 
-<hr>
-<h3>优化后的代码</h3>
-<p>以下是优化后的 <code>index.html</code>，基于之前的 artifact（artifact_id: 12565d50-bd53-4c1d-b294-d096f0d57483），调整了样式和内容以更接近目标网站 <a href="https://dh.kejilion.pro">https://dh.kejilion.pro</a> 的效果。</p>
+---
+
+### 优化后的代码
+
+以下是优化后的 `index.html`，基于之前的 artifact（artifact_id: 12565d50-bd53-4c1d-b294-d096f0d57483），调整了样式和内容以更接近目标网站 https://dh.kejilion.pro 的效果。
+
 <xaiArtifact artifact_id="12565d50-bd53-4c1d-b294-d096f0d57483" artifact_version_id="2fd59f00-9bf8-4868-9cae-fb71b6722bf8" title="index.html" contentType="text/html">
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -299,103 +302,103 @@
                 grid-template-columns: 1fr;
             }
         }
-    
-
-
-    ☰
-    
-        
-            🦁
-            科技Lion导航
-            
-                云服务器
-                站长工具
-                邮箱直链
-                网盘云盘
-                软件下载
-                社交娱乐
-                VPS优惠
-                域名优惠
-            
-        
-        
-            欢迎体验科技Lion导航站
-            打造专业的云服务导航网站，方便您的云服务体验！
-            
-                
-            
-            
-                云服务器
-                
-                    V.PS 东京软银 6.9刀/月
-                    莱卡云 VPS
-                    The Plan 限时活动
-                    RackNerd VPS
-                    Vultr 云服务器
-                
-            
-            
-                站长工具
-                
-                    在线工具
-                    站长之家
-                    爱站网
-                    站长工具
-                
-            
-            
-                邮箱直链
-                
-                    Gmail
-                    网易邮箱
-                    QQ邮箱
-                    Outlook
-                
-            
-            
-                网盘云盘
-                
-                    阿里云盘
-                    百度网盘
-                    Dropbox
-                    腾讯云盘
-                
-            
-            
-                软件下载
-                
-                    科技Lion软件中心
-                    Softonic
-                    FileHippo
-                
-            
-            
-                社交娱乐
-                
-                    B站
-                    YouTube
-                    TikTok
-                    微博
-                
-            
-            
-                VPS优惠
-                
-                    更多VPS优惠
-                    Vultr 优惠
-                    Linode 优惠
-                
-            
-            
-                域名优惠
-                
-                    GNAME COM域名 8.8刀/首年
-                    GNAME CC域名 6.68刀/首年
-                
-            
-        
-    
-    
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">🦁</div>
+            <h2>科技Lion导航</h2>
+            <ul>
+                <li><a href="#cloud-servers">云服务器</a></li>
+                <li><a href="#webmaster-tools">站长工具</a></li>
+                <li><a href="#email-links">邮箱直链</a></li>
+                <li><a href="#cloud-storage">网盘云盘</a></li>
+                <li><a href="#software-downloads">软件下载</a></li>
+                <li><a href="#social-entertainment">社交娱乐</a></li>
+                <li><a href="#vps-offers">VPS优惠</a></li>
+                <li><a href="#domain-offers">域名优惠</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>欢迎体验科技Lion导航站</h1>
+            <p>打造专业的云服务导航网站，方便您的云服务体验！</p>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="搜索导航链接...">
+            </div>
+            <div class="section" id="cloud-servers">
+                <h2>云服务器</h2>
+                <ul>
+                    <li><a href="https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355">V.PS 东京软银 6.9刀/月</a></li>
+                    <li><a href="https://www.lcayun.com/cart?fid=10&gid=82/aff/ZEXUQBIM">莱卡云 VPS</a></li>
+                    <li><a href="https://bwh81.net/aff.php?aff=69004&pid=147">The Plan 限时活动</a></li>
+                    <li><a href="https://my.racknerd.com/aff.php?aff=4966&pid=100">RackNerd VPS</a></li>
+                    <li><a href="https://www.vultr.com/?ref=123456">Vultr 云服务器</a></li>
+                </ul>
+            </div>
+            <div class="section" id="webmaster-tools">
+                <h2>站长工具</h2>
+                <ul>
+                    <li><a href="https://tool.lu/">在线工具</a></li>
+                    <li><a href="https://www.chinaz.com/">站长之家</a></li>
+                    <li><a href="https://www.aizhan.com/">爱站网</a></li>
+                    <li><a href="https://www.toolnb.com/">站长工具</a></li>
+                </ul>
+            </div>
+            <div class="section" id="email-links">
+                <h2>邮箱直链</h2>
+                <ul>
+                    <li><a href="https://mail.google.com/">Gmail</a></li>
+                    <li><a href="https://mail.163.com/">网易邮箱</a></li>
+                    <li><a href="https://mail.qq.com/">QQ邮箱</a></li>
+                    <li><a bode><li><a href="https://outlook.live.com/">Outlook</a></li>
+                </ul>
+            </div>
+            <div class="section" id="cloud-storage">
+                <h2>网盘云盘</h2>
+                <ul>
+                    <li><a href="https://www.aliyundrive.com/">阿里云盘</a></li>
+                    <li><a href="https://pan.baidu.com/">百度网盘</a></li>
+                    <li><a href="https://www.dropbox.com/">Dropbox</a></li>
+                    <li><a href="https://cloud.tencent.com/">腾讯云盘</a></li>
+                </ul>
+            </div>
+            <div class="section" id="software-downloads">
+                <h2>软件下载</h2>
+                <ul>
+                    <li><a href="https://app.kejilion.pro/">科技Lion软件中心</a></li>
+                    <li><a href="https://www.softonic.com/">Softonic</a></li>
+                    <li><a href="https://www.filehippo.com/">FileHippo</a></li>
+                </ul>
+            </div>
+            <div class="section" id="social-entertainment">
+                <h2>社交娱乐</h2>
+                <ul>
+                    <li><a href="https://b23.tv/2mqnQyh">B站</a></li>
+                    <li><a href="https://www.youtube.com/@kejilion">YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/">TikTok</a></li>
+                    <li><a href="https://www.weibo.com/">微博</a></li>
+                </ul>
+            </div>
+            <div class="section" id="vps-offers">
+                <h2>VPS优惠</h2>
+                <ul>
+                    <li><a href="https://kejilion.pro/topvps/">更多VPS优惠</a></li>
+                    <li><a href="https://www.vultr.com/?ref=123456">Vultr 优惠</a></li>
+                    <li><a href="https://www.linode.com/">Linode 优惠</a></li>
+                </ul>
+            </div>
+            <div class="section" id="domain-offers">
+                <h2>域名优惠</h2>
+                <ul>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME COM域名 8.8刀/首年</a></li>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME CC域名 6.68刀/首年</a></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script>
         // 搜索功能：过滤链接
         function searchLinks() {
             const input = document.getElementById('searchInput').value.toLowerCase();
@@ -417,14 +420,14 @@
             });
         }
 
-<pre><code>    // 移动端汉堡菜单：显示/隐藏侧边栏
-    function toggleSidebar() {
-        const sidebar = document.getElementById(&#39;sidebar&#39;);
-        sidebar.classList.toggle(&#39;active&#39;);
-    }
+        // 移动端汉堡菜单：显示/隐藏侧边栏
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
 
-    // 绑定搜索事件
-    document.getElementById(&#39;searchInput&#39;).addEventListener(&#39;input&#39;, searchLinks);
-&lt;/script&gt;
-</code></pre>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96219c59a9d1fa49',t:'MTc1MzAwNTYxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+        // 绑定搜索事件
+        document.getElementById('searchInput').addEventListener('input', searchLinks);
+    </script>
+</body>
+</html>
