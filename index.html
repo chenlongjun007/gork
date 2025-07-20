@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIKlink - 专业的云服务导航网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -82,9 +83,11 @@
         .main-content {
             flex-grow: 1;
             padding: 25px;
-            margin-left: 180px;
+            margin-left: 200px;
             background-color: #f8f9fa;
             transition: margin-left 0.3s ease;
+            box-sizing: border-box;
+            min-width: 300px;
         }
         .main-content.no-sidebar {
             margin-left: 0;
@@ -150,7 +153,9 @@
             gap: 12px;
         }
         .section ul li a {
-            display: block;
+            display: flex;
+            align-items: center;
+desktop:     gap: 8px;
             padding: 10px;
             background-color: #fff;
             border: 1px solid #4dabf7;
@@ -158,8 +163,13 @@
             text-decoration: none;
             color: #333;
             font-size: 0.9em;
-            text-align: center;
+            text-align: left;
             transition: background 0.3s, transform 0.2s;
+        }
+        .section ul li a img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
         }
         .section ul li a:hover {
             background-color: #e9ecef;
@@ -185,9 +195,14 @@
             .main-content {
                 margin-left: 0;
                 padding: 15px;
+                min-width: 100%;
             }
             .section ul {
                 grid-template-columns: 1fr;
+            }
+            .section ul li a {
+                text-align: center;
+                justify-content: center;
             }
         }
     </style>
@@ -218,70 +233,70 @@
             <div class="section" id="cloud-servers">
                 <h2>云服务器</h2>
                 <ul>
-                    <li><a href="https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355">V.PS 东京软银 6.9刀/月</a></li>
-                    <li><a href="https://www.lcayun.com/cart?fid=10&gid=82/aff/ZEXUQBIM">莱卡云 VPS</a></li>
-                    <li><a href="https://bwh81.net/aff.php?aff=69004&pid=147">The Plan 限时活动</a></li>
-                    <li><a href="https://my.racknerd.com/aff.php?aff=4966&pid=100">RackNerd VPS</a></li>
-                    <li><a href="https://www.vultr.com/?ref=123456">Vultr 云服务器</a></li>
+                    <li><a href="https://vps.hosting/cart/tokyo-cloud-kvm-vps/?id=148&?affid=1355"><img src="https://www.vultr.com/favicon.ico" alt="V.PS Logo"> V.PS 东京软银 6.9刀/月</a></li>
+                    <li><a href="https://www.lcayun.com/cart?fid=10&gid=82/aff/ZEXUQBIM"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#cloud" alt="莱卡云 Logo"> 莱卡云 VPS</a></li>
+                    <li><a href="https://bwh81.net/aff.php?aff=69004&pid=147"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#server" alt="The Plan Logo"> The Plan 限时活动</a></li>
+                    <li><a href="https://my.racknerd.com/aff.php?aff=4966&pid=100"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#cloud" alt="RackNerd Logo"> RackNerd VPS</a></li>
+                    <li><a href="https://www.vultr.com/?ref=123456"><img src="https://www.vultr.com/favicon.ico" alt="Vultr Logo"> Vultr 云服务器</a></li>
                 </ul>
             </div>
             <div class="section" id="webmaster-tools">
                 <h2>站长工具</h2>
                 <ul>
-                    <li><a href="https://tool.lu/">在线工具</a></li>
-                    <li><a href="https://www.chinaz.com/">站长之家</a></li>
-                    <li><a href="https://www.aizhan.com/">爱站网</a></li>
-                    <li><a href="https://www.toolnb.com/">站长工具</a></li>
+                    <li><a href="https://tool.lu/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#tools" alt="Tool.lu Logo"> 在线工具</a></li>
+                    <li><a href="https://www.chinaz.com/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#tools" alt="站长之家 Logo"> 站长之家</a></li>
+                    <li><a href="https://www.aizhan.com/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#tools" alt="爱站网 Logo"> 爱站网</a></li>
+                    <li><a href="https://www.toolnb.com/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#tools" alt="Toolnb Logo"> 站长工具</a></li>
                 </ul>
             </div>
             <div class="section" id="email-links">
                 <h2>邮箱直链</h2>
                 <ul>
-                    <li><a href="https://mail.google.com/">Gmail</a></li>
-                    <li><a href="https://mail.163.com/">网易邮箱</a></li>
-                    <li><a href="https://mail.qq.com/">QQ邮箱</a></li>
-                    <li><a href="https://outlook.live.com/">Outlook</a></li>
+                    <li><a href="https://mail.google.com/"><img src="https://www.google.com/favicon.ico" alt="Gmail Logo"> Gmail</a></li>
+                    <li><a href="https://mail.163.com/"><img src="https://mail.163.com/favicon.ico" alt="网易邮箱 Logo"> 网易邮箱</a></li>
+                    <li><a href="https://mail.qq.com/"><img src="https://mail.qq.com/favicon.ico" alt="QQ邮箱 Logo"> QQ邮箱</a></li>
+                    <li><a href="https://outlook.live.com/"><img src="https://outlook.live.com/favicon.ico" alt="Outlook Logo"> Outlook</a></li>
                 </ul>
             </div>
             <div class="section" id="cloud-storage">
                 <h2>网盘云盘</h2>
                 <ul>
-                    <li><a href="https://www.aliyundrive.com/">阿里云盘</a></li>
-                    <li><a href="https://pan.baidu.com/">百度网盘</a></li>
-                    <li><a href="https://www.dropbox.com/">Dropbox</a></li>
-                    <li><a href="https://cloud.tencent.com/">腾讯云盘</a></li>
+                    <li><a href="https://www.aliyundrive.com/"><img src="https://www.aliyundrive.com/favicon.ico" alt="阿里云盘 Logo"> 阿里云盘</a></li>
+                    <li><a href="https://pan.baidu.com/"><img src="https://pan.baidu.com/favicon.ico" alt="百度网盘 Logo"> 百度网盘</a></li>
+                    <li><a href="https://www.dropbox.com/"><img src="https://www.dropbox.com/favicon.ico" alt="Dropbox Logo"> Dropbox</a></li>
+                    <li><a href="https://cloud.tencent.com/"><img src="https://cloud.tencent.com/favicon.ico" alt="腾讯云盘 Logo"> 腾讯云盘</a></li>
                 </ul>
             </div>
             <div class="section" id="software-downloads">
                 <h2>软件下载</h2>
                 <ul>
-                    <li><a href="https://app.kejilion.pro/">HIKlink软件中心</a></li>
-                    <li><a href="https://www.softonic.com/">Softonic</a></li>
-                    <li><a href="https://www.filehippo.com/">FileHippo</a></li>
+                    <li><a href="https://app.kejilion.pro/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#download" alt="HIKlink软件中心 Logo"> HIKlink软件中心</a></li>
+                    <li><a href="https://www.softonic.com/"><img src="https://www.softonic.com/favicon.ico" alt="Softonic Logo"> Softonic</a></li>
+                    <li><a href="https://www.filehippo.com/"><img src="https://www.filehippo.com/favicon.ico" alt="FileHippo Logo"> FileHippo</a></li>
                 </ul>
             </div>
             <div class="section" id="social-entertainment">
                 <h2>社交娱乐</h2>
                 <ul>
-                    <li><a href="https://b23.tv/2mqnQyh">B站</a></li>
-                    <li><a href="https://www.youtube.com/@kejilion">YouTube</a></li>
-                    <li><a href="https://www.tiktok.com/">TikTok</a></li>
-                    <li><a href="https://www.weibo.com/">微博</a></li>
+                    <li><a href="https://b23.tv/2mqnQyh"><img src="https://www.bilibili.com/favicon.ico" alt="B站 Logo"> B站</a></li>
+                    <li><a href="https://www.youtube.com/@kejilion"><img src="https://www.youtube.com/favicon.ico" alt="YouTube Logo"> YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/"><img src="https://www.tiktok.com/favicon.ico" alt="TikTok Logo"> TikTok</a></li>
+                    <li><a href="https://www.weibo.com/"><img src="https://www.weibo.com/favicon.ico" alt="微博 Logo"> 微博</a></li>
                 </ul>
             </div>
             <div class="section" id="vps-offers">
                 <h2>VPS优惠</h2>
                 <ul>
-                    <li><a hrefNimblebit  href="https://kejilion.pro/topvps/">更多VPS优惠</a></li>
-                    <li><a href="https://www.vultr.com/?ref=123456">Vultr 优惠</a></li>
-                    <1><a href="https://www.linode.com/">Linode 优惠</a></li>
+                    <li><a href="https://kejilion.pro/topvps/"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#tags" alt="VPS优惠 Logo"> 更多VPS优惠</a></li>
+                    <li><a href="https://www.vultr.com/?ref=123456"><img src="https://www.vultr.com/favicon.ico" alt="Vultr Logo"> Vultr 优惠</a></li>
+                    <li><a href="https://www.linode.com/"><img src="https://www.linode.com/favicon.ico" alt="Linode Logo"> Linode 优惠</a></li>
                 </ul>
             </div>
             <div class="section" id="domain-offers">
                 <h2>域名优惠</h2>
                 <ul>
-                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME COM域名 8.8刀/首年</a></li>
-                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh">GNAME CC域名 6.68刀/首年</a></li>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#globe" alt="GNAME Logo"> GNAME COM域名 8.8刀/首年</a></li>
+                    <li><a href="https://www.gname.com/register?tt=86836&ttcode=KEJILION86836&ttbj=sh"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.svg#globe" alt="GNAME Logo"> GNAME CC域名 6.68刀/首年</a></li>
                 </ul>
             </div>
         </main>
@@ -322,6 +337,12 @@
 
         // 绑定搜索事件
         document.getElementById('searchInput').addEventListener('input', searchLinks);
+
+        // 初始化：移动端默认隐藏侧边栏
+        if (window.innerWidth <= 768) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('main-content').classList.add('no-sidebar');
+        }
     </script>
 </body>
 </html>
